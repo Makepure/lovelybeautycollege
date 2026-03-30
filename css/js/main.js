@@ -1,20 +1,25 @@
-// Mobile Menu Toggle
-const mobileMenu = document.getElementById('mobile-menu');
-const navMenu = document.querySelector('.nav-menu');
-
-if (mobileMenu) {
-    mobileMenu.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
-}
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        if (mobileMenu) mobileMenu.classList.remove('active');
-    });
+// ============================================
+// MOBILE MENU TOGGLE - FIXED
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            console.log('Menu toggled'); // For debugging
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
 });
 
 // Back to Top Button
@@ -54,9 +59,9 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name')?.value;
+        const email = document.getElementById('email')?.value;
+        const message = document.getElementById('message')?.value;
         const formMessage = document.getElementById('formMessage');
         
         if (name && email && message) {
@@ -175,9 +180,22 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ============================================ */
+// ============================================
+// FAQ ACCORDION (for courses page)
+// ============================================
+const faqItems = document.querySelectorAll('.faq-item');
+if (faqItems.length) {
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+}
+
+// ============================================
 // GALLERY FUNCTIONALITY
-// ============================================ */
+// ============================================
 
 const galleryImages = [
     { src: 'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=600&h=400&fit=crop', category: 'makeup', title: 'Bridal Makeup', description: 'Student work - Bridal makeup' },
