@@ -13,7 +13,7 @@ if (mobileMenu) {
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        mobileMenu.classList.remove('active');
+        if (mobileMenu) mobileMenu.classList.remove('active');
     });
 });
 
@@ -60,14 +60,13 @@ if (contactForm) {
         const formMessage = document.getElementById('formMessage');
         
         if (name && email && message) {
-            // Here you can add your form submission logic
-            // For now, we'll just show a success message
             formMessage.textContent = 'Thank you for contacting us! We will get back to you soon.';
             formMessage.className = 'form-message success';
             contactForm.reset();
             
             setTimeout(() => {
                 formMessage.style.display = 'none';
+                formMessage.className = 'form-message';
             }, 5000);
         } else {
             formMessage.textContent = 'Please fill in all required fields.';
@@ -75,6 +74,7 @@ if (contactForm) {
             
             setTimeout(() => {
                 formMessage.style.display = 'none';
+                formMessage.className = 'form-message';
             }, 3000);
         }
     });
@@ -85,16 +85,16 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const coursesGrid = document.getElementById('courses-grid');
 
 if (filterBtns.length && coursesGrid) {
-    // Sample course data
+    // Course data
     const courses = [
-        { name: 'Professional Makeup Artistry', category: 'makeup', duration: '3 Months', price: '$1,999', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881' },
-        { name: 'Advanced Hair Styling', category: 'hair', duration: '4 Months', price: '$2,499', image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df' },
-        { name: 'Skincare Specialist', category: 'skincare', duration: '2 Months', price: '$1,499', image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c' },
-        { name: 'Nail Technology', category: 'nails', duration: '2 Months', price: '$1,299', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371' },
-        { name: 'Bridal Makeup', category: 'makeup', duration: '1 Month', price: '$899', image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e' },
-        { name: 'Hair Coloring Expert', category: 'hair', duration: '2 Months', price: '$1,299', image: 'https://images.unsplash.com/photo-1560869713-da80fec5af2e' },
-        { name: 'Advanced Skincare', category: 'skincare', duration: '3 Months', price: '$1,899', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881' },
-        { name: 'Nail Art Design', category: 'nails', duration: '1.5 Months', price: '$999', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371' }
+        { name: 'Professional Makeup Artistry', category: 'makeup', duration: '3 Months', price: '$1,999', image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop' },
+        { name: 'Advanced Hair Styling', category: 'hair', duration: '4 Months', price: '$2,499', image: 'https://images.unsplash.com/photo-1560869713-7d0a2943084e?w=600&h=400&fit=crop' },
+        { name: 'Skincare Specialist', category: 'skincare', duration: '2 Months', price: '$1,499', image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=400&fit=crop' },
+        { name: 'Nail Technology', category: 'nails', duration: '2 Months', price: '$1,299', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop' },
+        { name: 'Bridal Makeup', category: 'makeup', duration: '1 Month', price: '$899', image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=400&fit=crop' },
+        { name: 'Hair Coloring Expert', category: 'hair', duration: '2 Months', price: '$1,299', image: 'https://images.unsplash.com/photo-1560869713-7d0a2943084e?w=600&h=400&fit=crop' },
+        { name: 'Advanced Skincare', category: 'skincare', duration: '3 Months', price: '$1,899', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop' },
+        { name: 'Nail Art Design', category: 'nails', duration: '1.5 Months', price: '$999', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop' }
     ];
     
     function displayCourses(category) {
@@ -132,7 +132,7 @@ if (filterBtns.length && coursesGrid) {
     });
 }
 
-// Animated Counter (for about page stats)
+// Animated Counter
 const statNumbers = document.querySelectorAll('.stat h3, .stat-item h3');
 
 function animateCounter(element, target) {
@@ -158,7 +158,8 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const element = entry.target;
-            const target = parseInt(element.textContent);
+            const targetText = element.textContent;
+            const target = parseInt(targetText);
             if (!isNaN(target) && element.textContent !== target.toString()) {
                 animateCounter(element, target);
             }
@@ -183,35 +184,4 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '1';
-});
-
-// Add hover effect for course cards
-const courseCards = document.querySelectorAll('.course-card');
-courseCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-5px)';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-    });
-});
-
-// Simple form validation for newsletter (if added)
-const newsletterForm = document.querySelector('.newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = newsletterForm.querySelector('input[type="email"]').value;
-        if (email) {
-            alert('Thank you for subscribing!');
-            newsletterForm.reset();
-        }
-    });
-}
-
-// Prevent form submission if no service worker is needed (for static sites)
 console.log('Lovely Beauty College Website Loaded Successfully!');
