@@ -85,7 +85,6 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const coursesGrid = document.getElementById('courses-grid');
 
 if (filterBtns.length && coursesGrid) {
-    // Course data
     const courses = [
         { name: 'Professional Makeup Artistry', category: 'makeup', duration: '3 Months', price: '$1,999', image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop' },
         { name: 'Advanced Hair Styling', category: 'hair', duration: '4 Months', price: '$2,499', image: 'https://images.unsplash.com/photo-1560869713-7d0a2943084e?w=600&h=400&fit=crop' },
@@ -118,10 +117,8 @@ if (filterBtns.length && coursesGrid) {
         `).join('');
     }
     
-    // Initial display
     displayCourses('all');
     
-    // Add click event to filter buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
@@ -149,11 +146,7 @@ function animateCounter(element, target) {
     }, 20);
 }
 
-// Intersection Observer for counters
-const observerOptions = {
-    threshold: 0.5
-};
-
+const observerOptions = { threshold: 0.5 };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -168,9 +161,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-statNumbers.forEach(stat => {
-    observer.observe(stat);
-});
+statNumbers.forEach(stat => { observer.observe(stat); });
 
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {
@@ -183,5 +174,116 @@ window.addEventListener('scroll', () => {
         navbar.style.backdropFilter = 'none';
     }
 });
+
+// ============================================ */
+// GALLERY FUNCTIONALITY
+// ============================================ */
+
+const galleryImages = [
+    { src: 'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=600&h=400&fit=crop', category: 'makeup', title: 'Bridal Makeup', description: 'Student work - Bridal makeup' },
+    { src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop', category: 'makeup', title: 'Editorial Makeup', description: 'Creative makeup artistry' },
+    { src: 'https://images.unsplash.com/photo-1531753467928-4c5a46b7f0e9?w=600&h=400&fit=crop', category: 'makeup', title: 'Smokey Eye', description: 'Evening makeup look' },
+    { src: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&h=400&fit=crop', category: 'makeup', title: 'Natural Look', description: 'Daytime makeup' },
+    { src: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=400&fit=crop', category: 'hair', title: 'Wedding Hairstyle', description: 'Elegant updo for brides' },
+    { src: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=400&fit=crop', category: 'hair', title: 'Hair Coloring', description: 'Creative color techniques' },
+    { src: 'https://images.unsplash.com/photo-1560869713-7d0a2943084e?w=600&h=400&fit=crop', category: 'hair', title: 'Modern Cut', description: 'Contemporary hairstyle' },
+    { src: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=400&fit=crop', category: 'skincare', title: 'Facial Treatment', description: 'Student practicing facial massage' },
+    { src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop', category: 'skincare', title: 'Skincare Routine', description: 'Demonstrating proper skincare' },
+    { src: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop', category: 'nails', title: 'Nail Art', description: 'Creative nail designs' },
+    { src: 'https://images.unsplash.com/photo-1581840064865-6a3b1dbcc0b2?w=600&h=400&fit=crop', category: 'nails', title: 'Gel Nails', description: 'Professional gel application' },
+    { src: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400&fit=crop', category: 'students', title: 'Practice Session', description: 'Students practicing makeup techniques' },
+    { src: 'https://images.unsplash.com/photo-1527515545081-5f817ce836bf?w=600&h=400&fit=crop', category: 'students', title: 'Graduation Day', description: 'Our proud graduates' },
+    { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop', category: 'students', title: 'Workshop', description: 'Hands-on training session' }
+];
+
+function displayGallery(category) {
+    const galleryGrid = document.getElementById('gallery-grid');
+    if (!galleryGrid) return;
+    
+    const filteredImages = category === 'all' ? galleryImages : galleryImages.filter(img => img.category === category);
+    
+    galleryGrid.innerHTML = filteredImages.map((img, index) => `
+        <div class="gallery-item" data-category="${img.category}" data-index="${index}">
+            <img src="${img.src}" alt="${img.title}">
+            <div class="gallery-overlay">
+                <h3>${img.title}</h3>
+                <p>${img.description}</p>
+            </div>
+        </div>
+    `).join('');
+    
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const index = parseInt(item.dataset.index);
+            openLightbox(index, category === 'all' ? filteredImages : filteredImages);
+        });
+    });
+}
+
+let currentImages = [];
+let currentIndex = 0;
+
+function openLightbox(index, images) {
+    currentImages = images;
+    currentIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+    
+    lightbox.style.display = 'block';
+    lightboxImg.src = images[index].src;
+    caption.textContent = `${images[index].title} - ${images[index].description}`;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function navigateLightbox(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = currentImages.length - 1;
+    if (currentIndex >= currentImages.length) currentIndex = 0;
+    
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+    
+    lightboxImg.src = currentImages[currentIndex].src;
+    caption.textContent = `${currentImages[currentIndex].title} - ${currentImages[currentIndex].description}`;
+}
+
+if (document.querySelector('.gallery-section')) {
+    displayGallery('all');
+    
+    const filterBtnsGallery = document.querySelectorAll('.gallery-filter-btn');
+    filterBtnsGallery.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtnsGallery.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const category = btn.getAttribute('data-filter');
+            displayGallery(category);
+        });
+    });
+    
+    const lightbox = document.getElementById('lightbox');
+    const closeBtn = document.querySelector('.close-lightbox');
+    
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+    
+    document.addEventListener('keydown', (e) => {
+        if (lightbox && lightbox.style.display === 'block') {
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            else if (e.key === 'ArrowRight') navigateLightbox(1);
+            else if (e.key === 'Escape') closeLightbox();
+        }
+    });
+}
 
 console.log('Lovely Beauty College Website Loaded Successfully!');
