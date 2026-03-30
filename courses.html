@@ -44,6 +44,11 @@
     <section class="course-categories">
         <div class="container">
             <div class="categories-grid">
+                <div class="category-card" data-category="all">
+                    <i class="fas fa-th-large"></i>
+                    <h3>All Courses</h3>
+                    <p>View all our programs</p>
+                </div>
                 <div class="category-card" data-category="makeup">
                     <i class="fas fa-brush"></i>
                     <h3>Makeup</h3>
@@ -79,9 +84,9 @@
                 <button class="filter-btn" data-filter="nails">Nails</button>
             </div>
             
-            <!-- COURSE GRID - Courses will appear here -->
+            <!-- COURSE GRID -->
             <div class="courses-grid" id="courses-grid">
-                <div class="course-card">
+                <div class="course-card" data-category="makeup">
                     <div class="course-image">
                         <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop" alt="Makeup Course">
                     </div>
@@ -95,49 +100,7 @@
                         <a href="contact.html" class="btn-course">Enroll Now →</a>
                     </div>
                 </div>
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1560869713-7d0a2943084e?w=600&h=400&fit=crop" alt="Hair Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>Advanced Hair Styling</h3>
-                        <p>Learn cutting, coloring, styling, and hair treatments.</p>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 4 Months</span>
-                            <span><i class="fas fa-tag"></i> $2,499</span>
-                        </div>
-                        <a href="contact.html" class="btn-course">Enroll Now →</a>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=400&fit=crop" alt="Skincare Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>Skincare Specialist</h3>
-                        <p>Comprehensive training in facials, treatments, and skin analysis.</p>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 2 Months</span>
-                            <span><i class="fas fa-tag"></i> $1,499</span>
-                        </div>
-                        <a href="contact.html" class="btn-course">Enroll Now →</a>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop" alt="Nail Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>Nail Technology</h3>
-                        <p>Learn manicure, pedicure, and creative nail art designs.</p>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 2 Months</span>
-                            <span><i class="fas fa-tag"></i> $1,299</span>
-                        </div>
-                        <a href="contact.html" class="btn-course">Enroll Now →</a>
-                    </div>
-                </div>
-                <div class="course-card">
+                <div class="course-card" data-category="makeup">
                     <div class="course-image">
                         <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=400&fit=crop" alt="Bridal Makeup">
                     </div>
@@ -151,13 +114,55 @@
                         <a href="contact.html" class="btn-course">Enroll Now →</a>
                     </div>
                 </div>
-                <div class="course-card">
+                <div class="course-card" data-category="hair">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a2943084e?w=600&h=400&fit=crop" alt="Hair Course">
+                    </div>
+                    <div class="course-content">
+                        <h3>Advanced Hair Styling</h3>
+                        <p>Learn cutting, coloring, styling, and hair treatments.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 4 Months</span>
+                            <span><i class="fas fa-tag"></i> $2,499</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card" data-category="hair">
                     <div class="course-image">
                         <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=400&fit=crop" alt="Hair Coloring">
                     </div>
                     <div class="course-content">
                         <h3>Hair Coloring Expert</h3>
                         <p>Master color theory, balayage, ombre, and highlighting techniques.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 2 Months</span>
+                            <span><i class="fas fa-tag"></i> $1,299</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card" data-category="skincare">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=400&fit=crop" alt="Skincare Course">
+                    </div>
+                    <div class="course-content">
+                        <h3>Skincare Specialist</h3>
+                        <p>Comprehensive training in facials, treatments, and skin analysis.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 2 Months</span>
+                            <span><i class="fas fa-tag"></i> $1,499</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card" data-category="nails">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop" alt="Nail Course">
+                    </div>
+                    <div class="course-content">
+                        <h3>Nail Technology</h3>
+                        <p>Learn manicure, pedicure, and creative nail art designs.</p>
                         <div class="course-info">
                             <span><i class="far fa-clock"></i> 2 Months</span>
                             <span><i class="fas fa-tag"></i> $1,299</span>
@@ -331,12 +336,12 @@
 
     <script src="js/main.js"></script>
     
-    <!-- Additional JavaScript for Category Click and Filter -->
+    <!-- FILTER FUNCTIONALITY - MAKES CARDS AND BUTTONS WORK -->
     <script>
-        // Make category cards clickable to filter courses
-        document.addEventListener('DOMContentLoaded', function() {
+        (function() {
+            // Get all filter elements
             const categoryCards = document.querySelectorAll('.category-card');
-            const filterButtons = document.querySelectorAll('.filter-btn');
+            const filterBtns = document.querySelectorAll('.filter-btn');
             const courseCards = document.querySelectorAll('.course-card');
             
             // Function to filter courses
@@ -351,57 +356,77 @@
                 });
             }
             
-            // Set category attributes on course cards
-            const courseCategories = {
-                'Professional Makeup Artistry': 'makeup',
-                'Bridal Makeup': 'makeup',
-                'Advanced Hair Styling': 'hair',
-                'Hair Coloring Expert': 'hair',
-                'Skincare Specialist': 'skincare',
-                'Nail Technology': 'nails'
-            };
-            
-            courseCards.forEach(card => {
-                const title = card.querySelector('h3').innerText;
-                const category = courseCategories[title] || 'other';
-                card.setAttribute('data-category', category);
-            });
+            // Function to update active state on filter buttons
+            function updateActiveFilter(category) {
+                filterBtns.forEach(btn => {
+                    if (btn.getAttribute('data-filter') === category) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
             
             // Make category cards clickable
-            categoryCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    
-                    // Update active state on filter buttons
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        if (btn.getAttribute('data-filter') === category) {
-                            btn.classList.add('active');
+            if (categoryCards.length) {
+                categoryCards.forEach(card => {
+                    card.style.cursor = 'pointer';
+                    card.addEventListener('click', function(e) {
+                        const category = this.getAttribute('data-category');
+                        filterCourses(category);
+                        updateActiveFilter(category);
+                        
+                        // Smooth scroll to courses section
+                        const coursesSection = document.querySelector('.all-courses');
+                        if (coursesSection) {
+                            coursesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                     });
-                    
-                    // Filter courses
-                    filterCourses(category);
-                    
-                    // Scroll to courses section
-                    document.querySelector('.all-courses').scrollIntoView({ behavior: 'smooth' });
                 });
-            });
+            }
             
             // Make filter buttons work
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const category = this.getAttribute('data-filter');
-                    
-                    // Update active state
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Filter courses
-                    filterCourses(category);
+            if (filterBtns.length) {
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const category = this.getAttribute('data-filter');
+                        filterCourses(category);
+                        updateActiveFilter(category);
+                    });
                 });
-            });
-        });
+            }
+            
+            // FAQ Accordion functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            if (faqItems.length) {
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    if (question) {
+                        question.addEventListener('click', () => {
+                            item.classList.toggle('active');
+                        });
+                    }
+                });
+            }
+            
+            // Mobile menu toggle (if not already in main.js)
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            if (mobileMenu && navMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+                
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        if (mobileMenu) mobileMenu.classList.remove('active');
+                    });
+                });
+            }
+        })();
     </script>
 </body>
 </html>
