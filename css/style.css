@@ -21,6 +21,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--dark);
+    overflow-x: hidden;
 }
 
 .container {
@@ -128,6 +129,7 @@ body {
     font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
 }
 
 .highlight {
@@ -151,12 +153,14 @@ body {
     font-size: 1.1rem;
     color: var(--gray);
     margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease 0.1s backwards;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
 .btn {
@@ -207,6 +211,7 @@ body {
 .hero-stats {
     display: flex;
     gap: 3rem;
+    animation: fadeInUp 0.8s ease 0.3s backwards;
 }
 
 .stat h3 {
@@ -224,6 +229,7 @@ body {
     width: 100%;
     border-radius: 20px;
     box-shadow: var(--shadow);
+    animation: fadeInRight 0.8s ease;
 }
 
 /* Features Section */
@@ -885,6 +891,64 @@ body {
     transform: translateY(-5px);
 }
 
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* WhatsApp Chat Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.whatsapp-button i {
+    font-size: 24px;
+}
+
+.whatsapp-button span {
+    font-size: 14px;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    background: #20b859;
+    color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .hero .container,
@@ -966,6 +1030,22 @@ body {
     
     .filter-btn {
         margin: 5px;
+    }
+    
+    /* Mobile adjustment for WhatsApp button */
+    .whatsapp-button {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 16px;
+    }
+    
+    .whatsapp-button span {
+        display: none;
+    }
+    
+    .whatsapp-button i {
+        font-size: 28px;
+        margin: 0;
     }
 }
 
