@@ -40,17 +40,35 @@
         </div>
     </section>
 
+    <!-- CLICKABLE CATEGORY CARDS -->
     <section class="course-categories">
         <div class="container">
             <div class="categories-grid">
-                <div class="category-card"><i class="fas fa-brush"></i><h3>Makeup</h3><p>Professional makeup artistry courses</p></div>
-                <div class="category-card"><i class="fas fa-cut"></i><h3>Hair</h3><p>Advanced hair styling & coloring</p></div>
-                <div class="category-card"><i class="fas fa-smile"></i><h3>Skincare</h3><p>Facial treatments & skin care</p></div>
-                <div class="category-card"><i class="fas fa-hand-peace"></i><h3>Nails</h3><p>Nail art & manicure techniques</p></div>
+                <div class="category-card" data-category="makeup">
+                    <i class="fas fa-brush"></i>
+                    <h3>Makeup</h3>
+                    <p>Professional makeup artistry courses</p>
+                </div>
+                <div class="category-card" data-category="hair">
+                    <i class="fas fa-cut"></i>
+                    <h3>Hair</h3>
+                    <p>Advanced hair styling & coloring</p>
+                </div>
+                <div class="category-card" data-category="skincare">
+                    <i class="fas fa-smile"></i>
+                    <h3>Skincare</h3>
+                    <p>Facial treatments & skin care</p>
+                </div>
+                <div class="category-card" data-category="nails">
+                    <i class="fas fa-hand-peace"></i>
+                    <h3>Nails</h3>
+                    <p>Nail art & manicure techniques</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- COURSE FILTER BUTTONS -->
     <section class="all-courses">
         <div class="container">
             <div class="courses-filter">
@@ -60,32 +78,189 @@
                 <button class="filter-btn" data-filter="skincare">Skincare</button>
                 <button class="filter-btn" data-filter="nails">Nails</button>
             </div>
-            <div class="courses-grid" id="courses-grid"></div>
+            
+            <!-- COURSE GRID - Courses will appear here -->
+            <div class="courses-grid" id="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop" alt="Makeup Course">
+                    </div>
+                    <div class="course-content">
+                        <h3>Professional Makeup Artistry</h3>
+                        <p>Master the art of makeup from basic to advanced techniques.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 3 Months</span>
+                            <span><i class="fas fa-tag"></i> $1,999</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a2943084e?w=600&h=400&fit=crop" alt="Hair Course">
+                    </div>
+                    <div class="course-content">
+                        <h3>Advanced Hair Styling</h3>
+                        <p>Learn cutting, coloring, styling, and hair treatments.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 4 Months</span>
+                            <span><i class="fas fa-tag"></i> $2,499</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=400&fit=crop" alt="Skincare Course">
+                    </div>
+                    <div class="course-content">
+                        <h3>Skincare Specialist</h3>
+                        <p>Comprehensive training in facials, treatments, and skin analysis.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 2 Months</span>
+                            <span><i class="fas fa-tag"></i> $1,499</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop" alt="Nail Course">
+                    </div>
+                    <div class="course-content">
+                        <h3>Nail Technology</h3>
+                        <p>Learn manicure, pedicure, and creative nail art designs.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 2 Months</span>
+                            <span><i class="fas fa-tag"></i> $1,299</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=400&fit=crop" alt="Bridal Makeup">
+                    </div>
+                    <div class="course-content">
+                        <h3>Bridal Makeup</h3>
+                        <p>Specialized training for bridal looks and wedding makeup.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 1 Month</span>
+                            <span><i class="fas fa-tag"></i> $899</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=400&fit=crop" alt="Hair Coloring">
+                    </div>
+                    <div class="course-content">
+                        <h3>Hair Coloring Expert</h3>
+                        <p>Master color theory, balayage, ombre, and highlighting techniques.</p>
+                        <div class="course-info">
+                            <span><i class="far fa-clock"></i> 2 Months</span>
+                            <span><i class="fas fa-tag"></i> $1,299</span>
+                        </div>
+                        <a href="contact.html" class="btn-course">Enroll Now →</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="course-features">
         <div class="container">
-            <div class="section-header"><h2>Why Choose Our Courses?</h2><p>What makes our beauty education stand out</p></div>
+            <div class="section-header">
+                <h2>Why Choose Our Courses?</h2>
+                <p>What makes our beauty education stand out</p>
+            </div>
             <div class="course-features-grid">
-                <div class="course-feature"><i class="fas fa-certificate"></i><h3>International Certification</h3><p>Globally recognized certificates upon completion</p></div>
-                <div class="course-feature"><i class="fas fa-user-graduate"></i><h3>Expert Instructors</h3><p>Learn from industry professionals with 10+ years experience</p></div>
-                <div class="course-feature"><i class="fas fa-laptop"></i><h3>Practical Training</h3><p>80% hands-on practice with real clients</p></div>
-                <div class="course-feature"><i class="fas fa-briefcase"></i><h3>Placement Assistance</h3><p>Job placement support in top salons and spas</p></div>
+                <div class="course-feature">
+                    <i class="fas fa-certificate"></i>
+                    <h3>International Certification</h3>
+                    <p>Globally recognized certificates upon completion</p>
+                </div>
+                <div class="course-feature">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals with 10+ years experience</p>
+                </div>
+                <div class="course-feature">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Practical Training</h3>
+                    <p>80% hands-on practice with real clients</p>
+                </div>
+                <div class="course-feature">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Placement Assistance</h3>
+                    <p>Job placement support in top salons and spas</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="faq-section">
         <div class="container">
-            <div class="section-header"><h2>Frequently Asked Questions</h2><p>Everything you need to know about our courses</p></div>
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our courses</p>
+            </div>
             <div class="faq-grid">
-                <div class="faq-item"><div class="faq-question"><h3>What is the duration of courses?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Our courses range from 1 to 6 months depending on the program. Professional Makeup is 3 months, Hair Styling is 4 months, and Skincare is 2 months.</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>Do you provide certification?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Yes! All our courses come with internationally recognized certification upon completion. Our certificates are accepted worldwide.</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>What is the class schedule?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>We offer flexible schedules: morning (9AM-1PM), afternoon (2PM-6PM), and weekend batches (Saturday & Sunday).</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>Do you offer job placement?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Yes! We have partnerships with over 50 salons and spas. Our placement cell provides 100% assistance in job placements.</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>What materials are included?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Course fees include study materials, professional kit, and access to our practice lab. Some advanced products may be extra.</p></div></div>
-                <div class="faq-item"><div class="faq-question"><h3>Can I pay in installments?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Yes, we offer flexible payment plans. You can pay in 2-3 installments. Contact our admission office for details.</p></div></div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the duration of courses?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our courses range from 1 to 6 months depending on the program. Professional Makeup is 3 months, Hair Styling is 4 months, and Skincare is 2 months. We also offer fast-track options for experienced students.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you provide certification?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All our courses come with internationally recognized certification upon completion. Our certificates are accepted worldwide and help you start your career with credibility.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the class schedule?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer flexible schedules: morning (9AM-1PM), afternoon (2PM-6PM), and weekend batches (Saturday & Sunday). Choose what works best for you!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer job placement?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We have partnerships with over 50 salons and spas. Our placement cell provides 100% assistance in job placements, internships, and freelancing opportunities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What materials are included?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Course fees include study materials, professional kit (makeup brushes, tools, etc.), and access to our practice lab. Some advanced products may be extra.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I pay in installments?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible payment plans. You can pay in 2-3 installments. Contact our admission office for details.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -104,7 +279,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <div class="footer-logo"><img src="images/logo.png" alt="Lovely Beauty College" style="height: 35px;"></div>
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Lovely Beauty College" style="height: 35px;">
+                    </div>
                     <p>Empowering beauty professionals with excellence in education and training since 2010.</p>
                     <div class="social-links">
                         <a href="https://web.facebook.com/profile.php?id=61584082114535" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -153,5 +330,78 @@
     </a>
 
     <script src="js/main.js"></script>
+    
+    <!-- Additional JavaScript for Category Click and Filter -->
+    <script>
+        // Make category cards clickable to filter courses
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryCards = document.querySelectorAll('.category-card');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            // Function to filter courses
+            function filterCourses(category) {
+                courseCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (category === 'all' || cardCategory === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Set category attributes on course cards
+            const courseCategories = {
+                'Professional Makeup Artistry': 'makeup',
+                'Bridal Makeup': 'makeup',
+                'Advanced Hair Styling': 'hair',
+                'Hair Coloring Expert': 'hair',
+                'Skincare Specialist': 'skincare',
+                'Nail Technology': 'nails'
+            };
+            
+            courseCards.forEach(card => {
+                const title = card.querySelector('h3').innerText;
+                const category = courseCategories[title] || 'other';
+                card.setAttribute('data-category', category);
+            });
+            
+            // Make category cards clickable
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active state on filter buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.getAttribute('data-filter') === category) {
+                            btn.classList.add('active');
+                        }
+                    });
+                    
+                    // Filter courses
+                    filterCourses(category);
+                    
+                    // Scroll to courses section
+                    document.querySelector('.all-courses').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            // Make filter buttons work
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-filter');
+                    
+                    // Update active state
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter courses
+                    filterCourses(category);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
