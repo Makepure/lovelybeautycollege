@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Gallery - Lovely Beauty College</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Lovely Beauty College" style="height: 40px;">
+                    </a>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <section class="page-header">
+        <div class="container">
+            <h1>Student Gallery</h1>
+            <p>Showcasing our talented students and their beautiful work</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="gallery-filter-btn active" data-filter="all">All Work</button>
+                <button class="gallery-filter-btn" data-filter="makeup">Makeup</button>
+                <button class="gallery-filter-btn" data-filter="hair">Hair Styling</button>
+                <button class="gallery-filter-btn" data-filter="skincare">Skincare</button>
+                <button class="gallery-filter-btn" data-filter="nails">Nail Art</button>
+                <button class="gallery-filter-btn" data-filter="students">Students</button>
+            </div>
+            <div class="gallery-grid" id="gallery-grid"></div>
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox">&times;</span>
+                <img class="lightbox-content" id="lightbox-img">
+                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Lovely Beauty College" style="height: 35px;">
+                    </div>
+                    <p>Empowering beauty professionals with excellence in education and training since 2010.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=61584082114535" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/lovelybeautycollege/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#">Makeup Artistry</a></li>
+                        <li><a href="#">Hair Styling</a></li>
+                        <li><a href="#">Skincare</a></li>
+                        <li><a href="#">Nail Technology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Addis Ababa, መገናኛ, Addis Ababa, Ethiopia, 1000</li>
+                        <li><i class="fas fa-phone"></i> +25199 826 1099</li>
+                        <li><i class="fas fa-envelope"></i> info@lovelybeauty.edu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lovely Beauty College. All rights reserved. | Designed with <i class="fas fa-heart"></i> for beauty enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/251998261099?text=Hello%20I%27m%20interested%20in%20your%20beauty%20courses" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
